@@ -20,12 +20,7 @@ client = OpenAI(
     base_url="https://aipipe.org",
     api_key=os.getenv("AIPIPE_TOKEN")
 )
-HEAD = {"Authorization": f"Bearer {config.AIPIPE_TOKEN}", "Content-Type": "application/json"}
-_CACHE = {}
 
-@app.api_route("/", methods=["GET", "HEAD"])
-async def root():
-    return {"ok": True, "email": config.EMAIL}
     
 def append_to_log(user_input: str, output_data: dict):
     """Appends an execution transaction line into the JSONL log file."""
