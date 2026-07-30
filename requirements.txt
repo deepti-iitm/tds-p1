@@ -2,3 +2,10 @@ python-telegram-bot>=20.0
 openai>=1.0.0
 uvicorn==0.24.0
 fastapi==0.104.1
+
+langchain
+langchain-openai
+langchain-experimental
+pandas
+requests
+python-dotenv
