@@ -12,4 +12,5 @@ COPY . .
 EXPOSE 8000
 
 # Start server using the port assigned by Render ($PORT)
-CMD ["sh", "-c", "uvicorn bot:app --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD ["sh", "-c", "python bot.py --host 0.0.0.0 --port ${PORT:-8000}"]
+
