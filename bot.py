@@ -2,6 +2,7 @@ import os
 import json
 import logging
 import asyncio
+import config
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from telegram import Update
@@ -15,10 +16,11 @@ logger = logging.getLogger(__name__)
 LOG_FILE_PATH = "run.jsonl"
 app = FastAPI()
 
+api_key_value = os.getenv("AIPIPE_TOKEN") or os.getenv("OPENAI_API_KEY")
 # 2. Initialize the OpenAI client pointing at AIPipe
 client = OpenAI(
     base_url="https://aipipe.org/openrouter/v1/",
-    api_key=os.getenv("AIPIPE_TOKEN") or os.getenv("OPENAI_API_KEY")
+    api_key=api_key_value
 )
 
     
